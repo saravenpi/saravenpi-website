@@ -1,0 +1,895 @@
+
+
+
+<html>
+
+
+
+<meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+    <meta name="title" content="Saravenpi">
+
+
+
+  <meta name="description" content="Debugging Humanity">
+
+
+
+   <meta name="theme-color" content="#654321">
+
+
+
+  <meta name="color" content="#654321">
+
+
+
+ <title>Saravenpi</title>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js
+
+"></script>
+
+  <meta property="og:image" content="https://avatars1.githubusercontent.com/u/61117321">
+
+
+
+<style>
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Space+Mono:400,700);
+
+
+
+
+
+body {
+
+
+
+  background-color:#654321;
+
+  background-size: cover;
+
+
+
+  font-family: "Space Mono";
+
+
+
+  font-weight: 400;
+
+
+
+  color: #555;
+
+
+
+}
+
+
+
+
+
+input, button {
+
+
+
+  font-family: "Space Mono";
+
+
+
+  font-size:1em;
+
+
+
+}
+
+
+
+
+
+a {text-decoration: underline;color:#654321;}
+
+
+
+
+
+.container {
+
+
+
+  transition: all 0.2s cubic-bezier(.7,.2,.17,1);
+
+
+
+  box-shadow: 0 0 2px hsla(0,0%,0%,0.1);
+
+
+
+  margin:5% 10%;
+
+
+
+
+
+  background: #FFF8DC;
+
+
+
+}
+
+
+
+
+
+.container:hover {
+
+
+
+  background: #FFF8DC;
+
+
+
+
+
+  transform: scale(1.05);
+
+
+
+  box-shadow: 0 46px 12px -16px hsla(0,0%,0%,0.05);
+
+
+
+}
+
+
+
+.container2 {
+
+
+
+  transition: all 0.2s cubic-bezier(.7,.2,.17,1);
+
+
+
+  box-shadow: 0 0 2px hsla(0,0%,0%,0.1);
+
+
+
+  margin:5% 10%;
+
+
+
+
+
+  background: #FFF8DC;
+
+
+
+}
+
+
+
+.container2:hover {
+
+
+
+  background: #FFF8DC;
+
+
+
+
+
+
+
+
+
+  box-shadow: 0 46px 12px -16px hsla(0,0%,0%,0.05);
+
+
+
+}
+
+
+
+.content {
+
+
+
+  padding: 5%;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.menu__btn {
+
+
+
+  float:left;
+
+
+
+  background: none;
+
+
+
+  border:none;
+
+
+
+  padding: 1em 0.5em;
+
+
+
+  color:#654321;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+h1 {color:#654321;}
+
+
+
+p {color: #777;}
+
+
+
+
+
+
+
+/* --- menu --- */
+
+
+
+
+
+
+
+
+
+code {
+
+
+
+  color: #654321;
+
+
+
+
+
+
+
+  padding: 2px 2px;
+
+
+
+  background-color: #DEB887;
+
+
+
+
+
+
+
+  border-radius: 2px;
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+
+
+
+  height: 100%;
+
+
+
+  width: 0;
+
+
+
+  position: fixed;
+
+
+
+  z-index: 1;
+
+
+
+  top: 0;
+
+
+
+  left: 0;
+
+
+
+  opacity: 1;
+
+
+
+  background-color: #654321;
+
+
+
+  overflow-x: hidden;
+
+
+
+  transition: 0.3s;
+
+
+
+}
+
+
+
+
+
+.overlay-content {
+
+
+
+  position: relative;
+
+
+
+  top: 25%;
+
+
+
+  width: 100%;
+
+
+
+  text-align: center;
+
+
+
+  margin-top: 30px;
+
+
+
+}
+
+
+
+
+
+.overlay a {
+
+
+
+  padding: 8px;
+
+
+
+  text-decoration: none;
+
+
+
+  font-size: 36px;
+
+
+
+  color: #f1f1f1;
+
+
+
+  display: block;
+
+
+
+  transition: 0.3s;
+
+
+
+}
+
+
+
+
+
+.overlay a:hover, .overlay a:focus {
+
+
+
+  color: #818181;
+
+
+
+}
+
+
+
+
+
+.overlay .closebtn {
+
+
+
+  position: absolute;
+
+
+
+  top: 20px;
+
+
+
+  right: 45px;
+
+
+
+  font-size: 60px;
+
+
+
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148991634-1"></script>
+
+
+
+<script>
+
+
+
+  window.dataLayer = window.dataLayer || [];
+
+
+
+  function gtag(){dataLayer.push(arguments);}
+
+
+
+  gtag('js', new Date());
+
+
+
+
+
+  gtag('config', 'UA-148991634-1');
+
+
+
+</script>
+
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+<div id="myNav" class="overlay">
+
+
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+
+
+  <div class="overlay-content">
+
+
+
+
+
+
+
+    <a href="https://github.com/saravenpi"  target="_blank">#_Github</a>
+
+
+
+    <a href="https://twitter.com/saravenpi" target="_blank">#_Twitter</a>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+function openNav() {
+
+
+
+  document.getElementById("myNav").style.width = "100%";
+
+  setTimeout(myFunction, 250);
+
+
+
+}
+
+
+
+
+
+function closeNav() {
+
+$(".container").show();
+
+  document.getElementById("myNav").style.width = "0%";
+
+
+
+}
+
+
+
+
+
+function myFunction() {
+
+
+
+$(".container").hide();
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+  <button class="menu__btn" onclick="openNav()">
+
+
+
+   <span class="menu__label">
+
+
+
+<i class="material-icons">menu</i></span>
+
+
+
+  </button>
+
+
+
+<div class="content">
+
+
+
+
+
+
+
+
+
+  <h1>
+
+
+
+ <img src="https://avatars1.githubusercontent.com/u/61117321" style="vertical-align: middle; display: inline; border-radius: 50%;" width="40px">  <span style="vertical-align: middle; display: inline;"> Saravenpi</span>
+
+
+
+</h1>
+
+
+
+  <p>
+
+
+
+  Yo, moi c'est Saravenpi, je suis développeur web freelance!
+
+  Je prends aussi des missions sans problèmes!
+
+  J'apprend constamment de nouveaux languages/frameworks!
+
+</p>
+
+
+
+<br>
+
+<style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#FFFFFF !important;background-color:#FF813F !important;border-radius: 8px !important;border: 1px solid transparent !important;font-size: 18px !important;letter-spacing:-0.08px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Lato', sans-serif !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#FFFFFF !important;}</style><link href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/saravenpi"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:18px !important;">Buy me a coffee</span></a>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+
+
+<div class="content">
+
+<h1>Mes compétences:</h1>
+
+<br>
+
+<br>
+
+Je maîtrise les languages/frameworks suivants:
+
+<br/>
+
+<br>
+
+<code>Html, Css, Js</code>
+
+<br/>
+
+<br>
+
+<code>Jquery, Sass</code>
+
+<br/>
+
+<br><code>Express.js, MongoDb</code>
+
+<br/>
+
+<br><code>NodeJs</code>
+
+<br/>
+
+<br><code>ElectronJS</code>
+
+<br/>
+
+<br><code>Php, MySQL</code>
+
+<br/>
+
+<br><code>Socket.io</code>
+
+<br/>
+
+<br>
+
+<code>Python</code> (je hais ce language, mais je l'ai appri pour la culture G)
+
+<br/>
+
+<br>
+
+Je suis entrain d'apprendre actuellement en profondeur le <code>React</code>
+
+
+
+<br><br/>
+
+J'ai aussi des connaissances en info, ce n'est pas mon domaine principal, mais je sais tout de même reconnaître une faille Sqli, et l'exploiter, ou encore avec des failles XSS. Encore une fois ce n'est pas du tout mon domaine.
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
+  <div class="content">
+
+    <h1>Contact:</h1>
+
+<br/>
+
+<br/>
+
+
+
+Contactez moi sur mon Twitter/Telegram/Github <code>@saravenpi</code><br> ou alors via Discord <code>saravenpi#8993</code></p>
+
+
+
+<br>
+
+
+
+<br>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+  <div class="content">
+
+
+
+  <h1>Des projets en cours:</h1>
+
+<br>
+
+
+
+<h2>Noziro Selfbot:</h2>
+
+Un selfbot, disponible sur tous vos appareils, très simple d'utilisation, avec des commandes puissantes, un vrai bot qu'on emporte partout avec soi. (Toujours en phase de developpement), pour en savoir plus, cliquez <a href="https://noziro.vercel.app">ici</a>.
+
+<br>
+
+  <h2>Hazl:</h2>
+
+  Un réseau social sympa, fruit d'un potentiel mélange entre Twitter/Slack/Discord, pour en savoir plus cliquez <a href="https://www.hazl.tk">ici</a>.
+
+  <br>
+
+
+
+<h1>Un projet marrant:</h1>
+
+<br>
+
+<h2>MongoDBChat (dispo sur mon github)</h2>
+
+<br>Un chat simple, et efficace :wink:, pour en savoir plus, c'est par <a href="https://mongodbchat.glitch.me">ici</a>.
+
+<br>(c'est un peu broken, au niveau de la member list, mais tkt)
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+
+
+  $(".menu").click(function(){
+
+
+
+   $(this).parent().toggleClass("close");
+
+
+
+
+
+
+
+});
+
+
+
+</script>
+
+
+
+</html>
+
